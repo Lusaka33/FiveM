@@ -1,0 +1,18 @@
+<head>
+</head>
+<body>
+    <audio id="bip_audio" style="display:none;" controls>
+        <source src="bip.ogg" type="audio/ogg">
+        Le BIP n'est pas disponible.
+    </audio>
+
+    <script>
+        window.addEventListener("message", function(event){
+            var action = event.data.action
+            if(action == "play_bip"){
+                document.getElementById("bip_audio").volume = 0.1;
+                document.getElementById("bip_audio").play()
+            }
+        })
+    </script>
+</body>

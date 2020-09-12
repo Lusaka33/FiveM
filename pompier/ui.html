@@ -1,0 +1,27 @@
+<head>
+</head>
+<body>
+    <audio id="bip_audio" style="display:none;" controls>
+        <source src="bip.ogg" type="audio/ogg">
+        Le BIP n'est pas disponible.
+    </audio>
+
+    <audio id="bip_audio2" style="display:none;" controls>
+        <source src="bipdispatch.ogg" type="audio/ogg">
+        Le BIP n'est pas disponible.
+    </audio>
+
+    <script>
+        window.addEventListener("message", function(event){
+            var action = event.data.action
+            if(action == "play_bip"){
+                document.getElementById("bip_audio").volume = 0.1;
+                document.getElementById("bip_audio").play()
+            }
+            if(action == "play_Dbip"){
+                document.getElementById("bip_audio2").volume = 0.1;
+                document.getElementById("bip_audio2").play()
+            }
+        })
+    </script>
+</body>
